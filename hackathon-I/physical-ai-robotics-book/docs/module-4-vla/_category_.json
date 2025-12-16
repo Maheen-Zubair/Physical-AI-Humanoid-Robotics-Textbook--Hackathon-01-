@@ -1,0 +1,10 @@
+{
+  "label": "Module 4: Vision-Language-Action (VLA)",
+  "position": 7,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Build humanoid robots that understand natural language commands. Integrate speech recognition, cognitive planning, and action execution."
+  }
+}

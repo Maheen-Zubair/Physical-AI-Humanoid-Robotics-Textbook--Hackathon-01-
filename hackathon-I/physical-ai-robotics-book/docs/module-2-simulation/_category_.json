@@ -1,0 +1,10 @@
+{
+  "label": "Module 2: The Digital Twin (Gazebo & Unity)",
+  "position": 5,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Master robot simulation with Gazebo physics and Unity visualization. Learn to create virtual environments for safe robot development."
+  }
+}
