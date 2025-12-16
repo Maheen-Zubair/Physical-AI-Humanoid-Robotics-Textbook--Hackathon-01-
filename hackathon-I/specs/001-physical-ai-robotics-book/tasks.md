@@ -77,17 +77,17 @@
 
 ### Implementation for User Story 1
 
-- [ ] T023 [P] [US1] Write docs/module-1-ros2/1-introduction.md - Introduction to ROS 2 (~2,000 words)
-- [ ] T024 [P] [US1] Write docs/module-1-ros2/2-nodes.md - Nodes and the Computation Graph (~2,500 words)
-- [ ] T025 [P] [US1] Write docs/module-1-ros2/3-topics.md - Topics and Publishers/Subscribers (~3,000 words)
-- [ ] T026 [P] [US1] Write docs/module-1-ros2/4-services.md - Services and Actions (~2,500 words)
-- [ ] T027 [P] [US1] Write docs/module-1-ros2/5-urdf.md - Robot Description with URDF (~3,000 words)
-- [ ] T028 [P] [US1] Write docs/module-1-ros2/6-rviz.md - Visualization with RViz (~2,000 words)
-- [ ] T029 [US1] Write docs/module-1-ros2/quiz.md - Module 1 Checkpoint Quiz (5-10 questions)
-- [ ] T029a [US1] Write docs/module-1-ros2/references.md - Module 1 References (APA format citations for ROS 2 docs)
-- [ ] T030 [US1] Verify all Module 1 code examples execute correctly on ROS 2 Humble
-- [ ] T031 [US1] Verify Module 1 word count within target range (13,500-16,500 words)
-- [ ] T032 [US1] Verify Module 1 builds without errors
+- [X] T023 [P] [US1] Write docs/module-1-ros2/1-introduction.md - Introduction to ROS 2 (~2,000 words)
+- [X] T024 [P] [US1] Write docs/module-1-ros2/2-nodes.md - Nodes and the Computation Graph (~2,500 words)
+- [X] T025 [P] [US1] Write docs/module-1-ros2/3-topics.md - Topics and Publishers/Subscribers (~3,000 words)
+- [X] T026 [P] [US1] Write docs/module-1-ros2/4-services.md - Services and Actions (~2,500 words)
+- [X] T027 [P] [US1] Write docs/module-1-ros2/5-urdf.md - Robot Description with URDF (~3,000 words)
+- [X] T028 [P] [US1] Write docs/module-1-ros2/6-rviz.md - Visualization with RViz (~2,000 words)
+- [X] T029 [US1] Write docs/module-1-ros2/quiz.md - Module 1 Checkpoint Quiz (5-10 questions)
+- [X] T029a [US1] Write docs/module-1-ros2/references.md - Module 1 References (APA format citations for ROS 2 docs)
+- [X] T030 [US1] Verify all Module 1 code examples execute correctly on ROS 2 Humble
+- [X] T031 [US1] Verify Module 1 word count within target range (13,500-16,500 words)
+- [X] T032 [US1] Verify Module 1 builds without errors
 
 **Checkpoint**: User Story 1 complete - student can learn ROS 2 fundamentals independently
 
@@ -105,17 +105,17 @@
 
 ### Implementation for User Story 2
 
-- [ ] T033 [P] [US2] Write docs/module-2-simulation/1-intro-simulation.md - Introduction to Robot Simulation (~1,500 words)
-- [ ] T034 [P] [US2] Write docs/module-2-simulation/2-gazebo-basics.md - Gazebo Basics (~3,000 words)
-- [ ] T035 [P] [US2] Write docs/module-2-simulation/3-robot-simulation.md - Robot Simulation in Gazebo (~3,500 words)
-- [ ] T036 [P] [US2] Write docs/module-2-simulation/4-sensors.md - Sensors in Simulation (~3,000 words)
-- [ ] T037 [P] [US2] Write docs/module-2-simulation/5-unity.md - Unity for Robot Visualization (~2,500 words)
-- [ ] T038 [P] [US2] Write docs/module-2-simulation/6-environments.md - Building Custom Environments (~2,500 words)
-- [ ] T039 [US2] Write docs/module-2-simulation/quiz.md - Module 2 Checkpoint Quiz (5-10 questions)
-- [ ] T039a [US2] Write docs/module-2-simulation/references.md - Module 2 References (APA format citations for Gazebo/Unity docs)
-- [ ] T040 [US2] Verify all Module 2 code examples execute correctly on Gazebo Fortress
-- [ ] T041 [US2] Verify Module 2 word count within target range (14,400-17,600 words)
-- [ ] T042 [US2] Verify Module 2 builds without errors
+- [X] T033 [P] [US2] Write docs/module-2-simulation/1-intro-simulation.md - Introduction to Robot Simulation (~1,500 words)
+- [X] T034 [P] [US2] Write docs/module-2-simulation/2-gazebo-basics.md - Gazebo Basics (~3,000 words)
+- [X] T035 [P] [US2] Write docs/module-2-simulation/3-robot-simulation.md - Robot Simulation in Gazebo (~3,500 words)
+- [X] T036 [P] [US2] Write docs/module-2-simulation/4-sensors.md - Sensors in Simulation (~3,000 words)
+- [X] T037 [P] [US2] Write docs/module-2-simulation/5-unity.md - Unity for Robot Visualization (~2,500 words)
+- [X] T038 [P] [US2] Write docs/module-2-simulation/6-environments.md - Building Custom Environments (~2,500 words)
+- [X] T039 [US2] Write docs/module-2-simulation/quiz.md - Module 2 Checkpoint Quiz (5-10 questions)
+- [X] T039a [US2] Write docs/module-2-simulation/references.md - Module 2 References (APA format citations for Gazebo/Unity docs)
+- [X] T040 [US2] Verify all Module 2 code examples execute correctly on Gazebo Fortress
+- [X] T041 [US2] Verify Module 2 word count within target range (14,400-17,600 words)
+- [X] T042 [US2] Verify Module 2 builds without errors
 
 **Checkpoint**: User Story 2 complete - student can simulate robots independently
 
@@ -133,17 +133,17 @@
 
 ### Implementation for User Story 3
 
-- [ ] T043 [P] [US3] Write docs/module-3-isaac/1-intro-isaac.md - Introduction to NVIDIA Isaac (~2,000 words)
-- [ ] T044 [P] [US3] Write docs/module-3-isaac/2-isaac-sim.md - Isaac Sim Setup and Basics (~3,000 words)
-- [ ] T045 [P] [US3] Write docs/module-3-isaac/3-vslam.md - Visual SLAM (VSLAM) (~3,500 words)
-- [ ] T046 [P] [US3] Write docs/module-3-isaac/4-navigation.md - Path Planning and Navigation (~3,500 words)
-- [ ] T047 [P] [US3] Write docs/module-3-isaac/5-rl-intro.md - Introduction to Reinforcement Learning (~3,000 words)
-- [ ] T048 [P] [US3] Write docs/module-3-isaac/6-rl-control.md - RL for Robot Control (~3,000 words)
-- [ ] T049 [US3] Write docs/module-3-isaac/quiz.md - Module 3 Checkpoint Quiz (5-10 questions)
-- [ ] T049a [US3] Write docs/module-3-isaac/references.md - Module 3 References (APA format citations for NVIDIA Isaac docs)
-- [ ] T050 [US3] Verify all Module 3 code examples execute correctly on Isaac Sim 2023.1.1+
-- [ ] T051 [US3] Verify Module 3 word count within target range (16,200-19,800 words)
-- [ ] T052 [US3] Verify Module 3 builds without errors
+- [X] T043 [P] [US3] Write docs/module-3-isaac/1-intro-isaac.md - Introduction to NVIDIA Isaac (~2,000 words)
+- [X] T044 [P] [US3] Write docs/module-3-isaac/2-isaac-sim.md - Isaac Sim Setup and Basics (~3,000 words)
+- [X] T045 [P] [US3] Write docs/module-3-isaac/3-vslam.md - Visual SLAM (VSLAM) (~3,500 words)
+- [X] T046 [P] [US3] Write docs/module-3-isaac/4-navigation.md - Path Planning and Navigation (~3,500 words)
+- [X] T047 [P] [US3] Write docs/module-3-isaac/5-rl-intro.md - Introduction to Reinforcement Learning (~3,000 words)
+- [X] T048 [P] [US3] Write docs/module-3-isaac/6-rl-control.md - RL for Robot Control (~3,000 words)
+- [X] T049 [US3] Write docs/module-3-isaac/quiz.md - Module 3 Checkpoint Quiz (5-10 questions)
+- [X] T049a [US3] Write docs/module-3-isaac/references.md - Module 3 References (APA format citations for NVIDIA Isaac docs)
+- [X] T050 [US3] Verify all Module 3 code examples execute correctly on Isaac Sim 2023.1.1+
+- [X] T051 [US3] Verify Module 3 word count within target range (16,200-19,800 words)
+- [X] T052 [US3] Verify Module 3 builds without errors
 
 **Checkpoint**: User Story 3 complete - student can implement AI navigation independently
 
@@ -161,17 +161,17 @@
 
 ### Implementation for User Story 4
 
-- [ ] T053 [P] [US4] Write docs/module-4-vla/1-intro-vla.md - Introduction to VLA Systems (~2,000 words)
-- [ ] T054 [P] [US4] Write docs/module-4-vla/2-whisper.md - Speech Recognition with Whisper (~3,000 words)
-- [ ] T055 [P] [US4] Write docs/module-4-vla/3-nlu.md - Natural Language Understanding (~2,500 words)
-- [ ] T056 [P] [US4] Write docs/module-4-vla/4-planning.md - Cognitive Action Planning (~3,000 words)
-- [ ] T057 [P] [US4] Write docs/module-4-vla/5-integration.md - VLA Pipeline Integration (~3,000 words)
-- [ ] T058 [US4] Write docs/module-4-vla/6-capstone.md - Capstone: Autonomous Humanoid (~4,000 words)
-- [ ] T059 [US4] Write docs/module-4-vla/quiz.md - Module 4 Checkpoint Quiz (5-10 questions)
-- [ ] T059a [US4] Write docs/module-4-vla/references.md - Module 4 References (APA format citations for Whisper/VLA docs)
-- [ ] T060 [US4] Verify all Module 4 code examples execute correctly
-- [ ] T061 [US4] Verify Module 4 word count within target range (15,750-19,250 words)
-- [ ] T062 [US4] Verify Module 4 builds without errors
+- [X] T053 [P] [US4] Write docs/module-4-vla/1-intro-vla.md - Introduction to VLA Systems (~2,000 words)
+- [X] T054 [P] [US4] Write docs/module-4-vla/2-whisper.md - Speech Recognition with Whisper (~3,000 words)
+- [X] T055 [P] [US4] Write docs/module-4-vla/3-nlu.md - Natural Language Understanding (~2,500 words)
+- [X] T056 [P] [US4] Write docs/module-4-vla/4-planning.md - Cognitive Action Planning (~3,000 words)
+- [X] T057 [P] [US4] Write docs/module-4-vla/5-integration.md - VLA Pipeline Integration (~3,000 words)
+- [X] T058 [US4] Write docs/module-4-vla/6-capstone.md - Capstone: Autonomous Humanoid (~4,000 words)
+- [X] T059 [US4] Write docs/module-4-vla/quiz.md - Module 4 Checkpoint Quiz (5-10 questions)
+- [X] T059a [US4] Write docs/module-4-vla/references.md - Module 4 References (APA format citations for Whisper/VLA docs)
+- [X] T060 [US4] Verify all Module 4 code examples execute correctly
+- [X] T061 [US4] Verify Module 4 word count within target range (15,750-19,250 words)
+- [X] T062 [US4] Verify Module 4 builds without errors
 
 **Checkpoint**: User Story 4 complete - student can build VLA systems independently
 
@@ -202,23 +202,23 @@
 - [X] T070 Verify total word count within target (~80,000 words, +/- 10%)
 - [X] T071 Run spell check on all markdown files
 - [X] T072 Verify all frontmatter is complete (position, label, title, description, keywords)
-- [ ] T073 Verify each chapter has exactly 1 exercise
-- [ ] T074 Verify each module quiz has 5-10 questions
+- [X] T073 Verify each chapter has exactly 1 exercise
+- [X] T074 Verify each module quiz has 5-10 questions
 
 ### Cross-Module Consistency Checks
 
-- [ ] T074a Verify terminology consistency across all modules (e.g., "node" vs "Node", "ROS 2" vs "ROS2") and technical terms defined on first use
-- [ ] T074b Verify code style consistency (variable naming, comment style, import ordering)
-- [ ] T074c Verify all software version references match VERSION-PINNING.md
-- [ ] T074d Verify all references sections follow APA format from references-template.md
-- [ ] T074e Verify all technical claims are verifiable against official documentation (FR-007)
-- [ ] T074f Verify second-person instructional tone consistency across all chapters (FR-010)
+- [X] T074a Verify terminology consistency across all modules (e.g., "node" vs "Node", "ROS 2" vs "ROS2") and technical terms defined on first use
+- [X] T074b Verify code style consistency (variable naming, comment style, import ordering)
+- [X] T074c Verify all software version references match VERSION-PINNING.md
+- [X] T074d Verify all references sections follow APA format from references-template.md
+- [X] T074e Verify all technical claims are verifiable against official documentation (FR-007)
+- [X] T074f Verify second-person instructional tone consistency across all chapters (FR-010)
 
 ### Deployment
 
-- [ ] T075 Test full Docusaurus build with `npm run build`
-- [ ] T076 Deploy to GitHub Pages and verify live site
-- [ ] T077 Run quickstart.md validation (contributor can follow guide)
+- [X] T075 Test full Docusaurus build with `npm run build`
+- [X] T076 Deploy to GitHub Pages and verify live site
+- [X] T077 Run quickstart.md validation (contributor can follow guide)
 
 **Checkpoint**: Book ready for publication
 

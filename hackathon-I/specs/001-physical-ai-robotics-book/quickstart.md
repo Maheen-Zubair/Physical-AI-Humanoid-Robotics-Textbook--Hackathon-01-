@@ -20,8 +20,8 @@ This guide helps writers quickly get started with contributing to the book.
 
 ```bash
 # Clone the repository
-git clone https://github.com/[org]/physical-ai-robotics-book.git
-cd physical-ai-robotics-book
+git clone https://github.com/Maheen-Zubair/Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-.git
+cd Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-/hackathon-I/physical-ai-robotics-book
 
 # Install dependencies
 npm install
