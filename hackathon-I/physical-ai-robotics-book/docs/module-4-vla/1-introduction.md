@@ -335,4 +335,4 @@ Key concepts:
 
 In the next chapter, you will learn about speech understanding with OpenAI Whisper.
 
-**Next:** [Speech Understanding with Whisper](./2-whisper)
+**Next:** [Speech Understanding with Whisper](./2-whisper.md)

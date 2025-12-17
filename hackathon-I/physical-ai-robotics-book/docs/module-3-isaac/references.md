@@ -148,4 +148,4 @@ When citing this textbook module:
 
 ---
 
-**Next:** [Module 4: Vision-Language-Action Models](../module-4-vla/1-introduction)
+**Next:** [Module 4: Vision-Language-Action Models](../module-4-vla/1-introduction.md)

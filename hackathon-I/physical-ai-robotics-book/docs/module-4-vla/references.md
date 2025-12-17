@@ -170,4 +170,4 @@ When citing this textbook module:
 
 ---
 
-**Next:** [Module 5: Conclusion and Appendices](../conclusion)
+**Next:** [Module 5: Conclusion and Appendices](../conclusion.md)

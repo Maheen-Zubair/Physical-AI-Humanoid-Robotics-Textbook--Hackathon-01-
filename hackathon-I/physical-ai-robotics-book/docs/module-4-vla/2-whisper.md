@@ -606,4 +606,4 @@ Key integration points:
 
 In the next chapter, you will learn about vision-language models for scene understanding.
 
-**Next:** [Vision-Language Models](./3-vision-language)
+**Next:** [Vision-Language Models](./3-vision-language.md)

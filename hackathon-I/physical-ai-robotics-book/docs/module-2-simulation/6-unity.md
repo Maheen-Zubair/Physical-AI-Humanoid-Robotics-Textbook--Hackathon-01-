@@ -579,4 +579,4 @@ This completes Module 2 on simulation. You now have the skills to:
 - Simulate sensors realistically
 - Use Unity for visualization
 
-**Next:** [Module 2 Quiz](./quiz)
+**Next:** [Module 2 Quiz](./quiz.md)

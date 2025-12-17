@@ -125,4 +125,4 @@ When citing this textbook module:
 
 ---
 
-**Next:** [Module 2: Simulation with Gazebo](../module-2-simulation/1-introduction)
+**Next:** [Module 2: Simulation with Gazebo](../module-2-simulation/1-introduction.md)

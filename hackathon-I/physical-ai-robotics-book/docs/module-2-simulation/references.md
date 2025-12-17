@@ -143,4 +143,4 @@ When citing this textbook module:
 
 ---
 
-**Next:** [Module 3: NVIDIA Isaac for AI](../module-3-isaac/1-introduction)
+**Next:** [Module 3: NVIDIA Isaac for AI](../module-3-isaac/1-introduction.md)

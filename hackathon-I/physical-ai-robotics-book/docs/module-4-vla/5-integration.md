@@ -606,4 +606,4 @@ Key implementation patterns:
 
 In the next chapter, you will learn about humanoid robot control with VLA systems.
 
-**Next:** [Humanoid Robot Control](./6-humanoid)
+**Next:** [Humanoid Robot Control](./6-humanoid.md)

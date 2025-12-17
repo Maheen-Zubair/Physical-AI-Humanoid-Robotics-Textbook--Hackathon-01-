@@ -572,4 +572,4 @@ This completes Module 3 on NVIDIA Isaac. You now have skills for:
 - Generating synthetic data
 - Deploying with Isaac ROS
 
-**Next:** [Module 3 Quiz](./quiz)
+**Next:** [Module 3 Quiz](./quiz.md)

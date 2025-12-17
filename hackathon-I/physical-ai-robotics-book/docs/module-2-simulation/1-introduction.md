@@ -356,4 +356,4 @@ Key concepts:
 
 In the next chapter, you will learn to create simulation worlds using SDF (Simulation Description Format).
 
-**Next:** [SDF World Building](./2-sdf-worlds)
+**Next:** [SDF World Building](./2-sdf-worlds.md)

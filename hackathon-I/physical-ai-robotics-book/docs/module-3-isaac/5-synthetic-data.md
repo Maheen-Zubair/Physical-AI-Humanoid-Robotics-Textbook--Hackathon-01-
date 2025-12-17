@@ -629,4 +629,4 @@ Key skills learned:
 
 In the next chapter, you will learn about Isaac ROS for deploying AI on real robots.
 
-**Next:** [Isaac ROS Deployment](./6-isaac-ros)
+**Next:** [Isaac ROS Deployment](./6-isaac-ros.md)

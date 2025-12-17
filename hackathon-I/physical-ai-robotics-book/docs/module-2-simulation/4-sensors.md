@@ -631,4 +631,4 @@ Key skills learned:
 
 In the next chapter, you will learn about physics and collision simulation.
 
-**Next:** [Physics and Collisions](./5-physics)
+**Next:** [Physics and Collisions](./5-physics.md)

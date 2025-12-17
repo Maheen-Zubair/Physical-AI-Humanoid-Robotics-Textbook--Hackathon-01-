@@ -574,4 +574,4 @@ Key skills learned:
 
 In the next chapter, you will learn about synthetic data generation.
 
-**Next:** [Synthetic Data Generation](./5-synthetic-data)
+**Next:** [Synthetic Data Generation](./5-synthetic-data.md)

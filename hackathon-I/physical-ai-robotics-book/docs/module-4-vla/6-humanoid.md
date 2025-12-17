@@ -681,4 +681,4 @@ This completes Module 4 on Vision-Language-Action models. You now have skills fo
 - Integrating complete VLA systems
 - Controlling humanoid robots with VLA
 
-**Next:** [Module 4 Quiz](./quiz)
+**Next:** [Module 4 Quiz](./quiz.md)

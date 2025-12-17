@@ -527,4 +527,4 @@ Key principles:
 
 In the next chapter, you will learn to use Isaac Lab for reinforcement learning.
 
-**Next:** [Isaac Lab and RL](./4-isaac-lab)
+**Next:** [Isaac Lab and RL](./4-isaac-lab.md)

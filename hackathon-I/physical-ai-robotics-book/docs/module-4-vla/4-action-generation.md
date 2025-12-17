@@ -608,4 +608,4 @@ Key implementation patterns:
 
 In the next chapter, you will learn about end-to-end robot control integration.
 
-**Next:** [End-to-End Integration](./5-integration)
+**Next:** [End-to-End Integration](./5-integration.md)

@@ -555,4 +555,4 @@ Key skills learned:
 
 In the next chapter, you will learn about simulating sensors in detail.
 
-**Next:** [Sensor Simulation](./4-sensors)
+**Next:** [Sensor Simulation](./4-sensors.md)

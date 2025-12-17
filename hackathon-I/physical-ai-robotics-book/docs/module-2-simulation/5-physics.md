@@ -538,4 +538,4 @@ Key skills learned:
 
 In the next chapter, you will learn about Unity as an alternative simulation platform for visualization and machine learning.
 
-**Next:** [Unity for Robotics](./6-unity)
+**Next:** [Unity for Robotics](./6-unity.md)

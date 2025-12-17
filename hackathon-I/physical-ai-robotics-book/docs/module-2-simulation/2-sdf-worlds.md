@@ -608,4 +608,4 @@ Key skills learned:
 
 In the next chapter, you will learn to spawn robots in your simulation world and integrate with ROS 2.
 
-**Next:** [Spawning Robots](./3-spawning-robots)
+**Next:** [Spawning Robots](./3-spawning-robots.md)

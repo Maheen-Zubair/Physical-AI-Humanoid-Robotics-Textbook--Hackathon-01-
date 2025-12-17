@@ -549,4 +549,4 @@ Key skills learned:
 
 In the next chapter, you will learn about domain randomization for robust training.
 
-**Next:** [Domain Randomization](./3-domain-randomization)
+**Next:** [Domain Randomization](./3-domain-randomization.md)

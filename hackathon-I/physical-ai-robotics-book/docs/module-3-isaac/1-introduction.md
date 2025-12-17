@@ -351,4 +351,4 @@ Key advantages:
 
 In the next chapter, you will learn how to navigate the Isaac Sim interface and create your first simulation.
 
-**Next:** [Isaac Sim Basics](./2-isaac-sim-basics)
+**Next:** [Isaac Sim Basics](./2-isaac-sim-basics.md)
