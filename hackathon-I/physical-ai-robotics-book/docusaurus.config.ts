@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io',
+  url: 'https://maheen-zubair.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-robotics-book/',
+  baseUrl: '/Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-/',
 
   // GitHub pages deployment config.
-  organizationName: 'your-username', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-robotics-book', // Usually your repo name.
+  organizationName: 'Maheen-Zubair', // Usually your GitHub org/user name.
+  projectName: 'Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -46,7 +46,7 @@ const config: Config = {
           routeBasePath: '/', // Serve docs at the site's root
           // Please change this to your repo.
           editUrl:
-            'https://github.com/your-username/physical-ai-robotics-book/tree/main/',
+            'https://github.com/Maheen-Zubair/Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-/tree/main/hackathon-I/physical-ai-robotics-book/',
         },
         blog: false, // Disable the blog plugin
         theme: {
@@ -76,7 +76,7 @@ const config: Config = {
           label: 'Book',
         },
         {
-          href: 'https://github.com/your-username/physical-ai-robotics-book',
+          href: 'https://github.com/Maheen-Zubair/Physical-AI-Humanoid-Robotics-Textbook--Hackathon-01-',
           label: 'GitHub',
           position: 'right',
         },
