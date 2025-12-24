@@ -28,3 +28,34 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Custom styles for the chatbot widget */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Ensure the chat widget doesn't interfere with Docusaurus layout */
+.chat-widget {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Adjust for Docusaurus theme */
+html[data-theme='dark'] .chat-widget {
+  background-color: #242526;
+  color: #e4e5e6;
+}
+
+html[data-theme='light'] .chat-widget {
+  background-color: white;
+  color: #242526;
+}
+
+/* Adjust main content to account for chat widget */
+.main-wrapper {
+  padding-bottom: 120px; /* Space for the chat widget */
+}
