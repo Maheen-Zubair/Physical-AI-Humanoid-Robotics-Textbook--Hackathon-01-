@@ -1,0 +1,398 @@
+openapi: 3.0.3
+info:
+  title: RAG Chatbot API
+  description: |
+    Backend API for the Integrated RAG Chatbot embedded in the AI-native book.
+    Deployed on Hugging Face Spaces (port 7860).
+
+    **Technology Stack**:
+    - Embeddings: Cohere embed-english-v3.0 (1024 dimensions)
+    - Vector Store: Qdrant Cloud with HNSW index
+    - Response Generation: Gemini 2.5 Flash
+    - Database: Neon Serverless PostgreSQL
+  version: 2.0.0
+  contact:
+    name: Hackathon Team
+
+servers:
+  - url: https://{space-name}.hf.space
+    description: Hugging Face Spaces deployment
+    variables:
+      space-name:
+        default: your-space-name
+        description: HF Space identifier
+
+paths:
+  /chat:
+    post:
+      summary: Submit a chat query
+      description: |
+        Main endpoint for chatbot queries. Handles both:
+        - **Selection mode**: When `context_selection` is provided, uses ONLY that text
+        - **Retrieval mode**: When no selection, performs semantic search with Cohere embeddings
+      operationId: submitChat
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+            examples:
+              retrieval_mode:
+                summary: Question without selection
+                value:
+                  query: "What is inverse kinematics?"
+                  session_id: "550e8400-e29b-41d4-a716-446655440000"
+                  context_selection: null
+              selection_mode:
+                summary: Question with selected text
+                value:
+                  query: "Can you explain this in simpler terms?"
+                  session_id: "550e8400-e29b-41d4-a716-446655440000"
+                  context_selection: "Forward kinematics computes the end-effector position given joint angles..."
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+              description: Seconds until rate limit resets
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Service unavailable (dependency down)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /chat/stream:
+    post:
+      summary: Submit a chat query with streaming response
+      description: |
+        Streaming endpoint for real-time chatbot responses using Server-Sent Events (SSE).
+        Same logic as `/chat` but returns response incrementally.
+      operationId: submitChatStream
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Streaming response
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                description: |
+                  Server-Sent Events stream. Each event:
+                  - `data: <text chunk>` for content
+                  - `data: [DONE]` signals end of stream
+              example: |
+                data: Inverse kinematics is
+                data:  the process of determining
+                data:  joint angles from the desired
+                data:  end-effector position.
+                data: [DONE]
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /selected-text-query:
+    post:
+      summary: Query using only selected text (explicit selection mode)
+      description: |
+        Explicit endpoint for selected-text-only queries.
+        **ALWAYS** uses selection mode - `context_selection` is REQUIRED.
+        **NEVER** performs vector search or embedding calls.
+      operationId: selectedTextQuery
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelectedTextRequest'
+            example:
+              query: "What does this code do?"
+              session_id: "550e8400-e29b-41d4-a716-446655440000"
+              context_selection: "def forward_kinematics(joint_angles):\n    return compute_transform(joint_angles)"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          description: Missing or empty context_selection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error: "INVALID_REQUEST"
+                message: "context_selection is required for this endpoint"
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns service health status and dependency connectivity
+      operationId: healthCheck
+      tags:
+        - System
+      responses:
+        '200':
+          description: Service healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: Service unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      required:
+        - query
+        - session_id
+      properties:
+        query:
+          type: string
+          description: The user's question
+          minLength: 1
+          maxLength: 2000
+          example: "What is inverse kinematics?"
+        session_id:
+          type: string
+          format: uuid
+          description: Client-generated session ID for conversation context
+          minLength: 36
+          maxLength: 36
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        context_selection:
+          type: string
+          nullable: true
+          description: |
+            User-selected text from the book. When provided (non-null, non-empty):
+            - System uses ONLY this text as context
+            - NO vector search is performed
+            - NO Cohere embedding call is made
+            When null or empty, system performs semantic search.
+          maxLength: 10000
+          example: null
+
+    SelectedTextRequest:
+      type: object
+      required:
+        - query
+        - session_id
+        - context_selection
+      properties:
+        query:
+          type: string
+          description: The user's question about the selected text
+          minLength: 1
+          maxLength: 2000
+          example: "Explain this in simpler terms"
+        session_id:
+          type: string
+          format: uuid
+          description: Client-generated session ID
+          minLength: 36
+          maxLength: 36
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        context_selection:
+          type: string
+          description: REQUIRED - User-selected text to explain/analyze
+          minLength: 1
+          maxLength: 10000
+          example: "Forward kinematics computes the end-effector position..."
+
+    ChatResponse:
+      type: object
+      required:
+        - response
+        - mode
+        - sources
+        - session_id
+      properties:
+        response:
+          type: string
+          description: The chatbot's response with inline citations (for retrieval mode)
+          example: "Inverse kinematics is the process of determining joint angles... [Source: Chapter 5: Kinematics](https://book.site/docs/kinematics)"
+        mode:
+          type: string
+          enum: [selection, retrieval]
+          description: How the context was obtained
+          example: "retrieval"
+        sources:
+          type: array
+          description: List of source URLs used (empty for selection mode or out-of-scope)
+          items:
+            type: string
+            format: uri
+          example: ["https://book.site/docs/kinematics"]
+        session_id:
+          type: string
+          format: uuid
+          description: Echo of the session ID for client tracking
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        out_of_scope:
+          type: boolean
+          description: True if question could not be answered from book content
+          default: false
+        selection_ignored:
+          type: boolean
+          description: True if provided selection was empty/whitespace and was ignored
+          default: false
+
+    Source:
+      type: object
+      required:
+        - chapter
+        - url
+      properties:
+        chapter:
+          type: string
+          description: Chapter or section title
+          example: "Chapter 5: Kinematics"
+        section:
+          type: string
+          nullable: true
+          description: Section within chapter (if applicable)
+          example: "Inverse Kinematics"
+        url:
+          type: string
+          format: uri
+          description: Direct link to the source page
+          example: "https://book.site/docs/kinematics"
+        similarity_score:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Relevance score from Cohere/Qdrant (only in retrieval mode)
+          example: 0.87
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error code
+          enum:
+            - INVALID_REQUEST
+            - RATE_LIMITED
+            - SERVICE_UNAVAILABLE
+            - INTERNAL_ERROR
+            - SELECTION_TOO_LONG
+          example: "RATE_LIMITED"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Rate limit exceeded. Please try again in 60 seconds."
+        retry_after:
+          type: integer
+          description: Seconds until retry is allowed (for rate limiting)
+          example: 60
+
+    HealthResponse:
+      type: object
+      required:
+        - status
+        - version
+        - services
+      properties:
+        status:
+          type: string
+          enum: [healthy, degraded, unhealthy]
+          description: Overall service status
+          example: "healthy"
+        version:
+          type: string
+          description: API version
+          example: "2.0.0"
+        services:
+          type: object
+          description: Status of each dependency
+          properties:
+            qdrant:
+              type: string
+              enum: [up, down]
+              description: Qdrant Cloud vector store status
+              example: "up"
+            neon:
+              type: string
+              enum: [up, down]
+              description: Neon PostgreSQL status
+              example: "up"
+            cohere:
+              type: string
+              enum: [up, down]
+              description: Cohere embedding API status
+              example: "up"
+            gemini:
+              type: string
+              enum: [up, down]
+              description: Gemini 2.5 Flash API status
+              example: "up"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-12-23T10:30:00Z"
+
+  securitySchemes: {}
+  # No authentication required - rate limiting by IP
+
+tags:
+  - name: Chat
+    description: Chat query endpoints (retrieval and selection modes)
+  - name: System
+    description: System health and status

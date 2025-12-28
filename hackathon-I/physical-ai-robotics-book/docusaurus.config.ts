@@ -56,6 +56,10 @@ const config: Config = {
     ],
   ],
 
+  // For development proxy, this will be handled by the dev server separately
+  // The build configuration doesn't need the devServer option
+  // Note: sitemap plugin is already included in the classic preset
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/physical-ai-social-card.jpg',
