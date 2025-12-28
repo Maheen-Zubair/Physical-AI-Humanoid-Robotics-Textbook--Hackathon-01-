@@ -1,3 +1,13 @@
+---
+title: RAG Chatbot API
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+license: mit
+---
+
 # RAG Chatbot for AI-native Book
 
 A Retrieval-Augmented Generation (RAG) chatbot that enables students to ask questions about book content and receive accurate answers with proper citations. The system uses semantic search to find relevant content and provides citations in the format [Source: Chapter Name](URL).

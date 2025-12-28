@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './ChatWidget.css';
 
-// API Configuration - Change this when deploying to production
+// API Configuration
 const API_CONFIG = {
-  // For local development: 'http://localhost:8001'
-  // For HF Spaces: 'https://your-space.hf.space'
+  // Production: HuggingFace Spaces
+  // Development: localhost
   baseUrl: process.env.NODE_ENV === 'development'
     ? 'http://localhost:8001'
-    : '', // Empty string uses relative URLs (same origin)
+    : 'https://myn00nu-rag-chatbot-api.hf.space',
 };
 
 // Streaming configuration
